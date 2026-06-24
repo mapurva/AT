@@ -1,0 +1,39 @@
+<!-- index.html
+CONCEPT: Run in browser to see WebAPIs (DOM events) feeding the Task Queue.
+Just double-click this file, or open it in Chrome/Firefox.
+Open DevTools Console (F12) to see the output.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Runtime Environment Demo</title>
+</head>
+<body>
+  <h1>Open your browser console (F12) to see output</h1>
+  <button id="myButton">Click me (DOM event -> Task Queue)</button>
+
+  <script>
+    console.log('1: page script starts running');
+
+    // DOM click events are handled by WebAPIs and queued in the Task Queue,
+    // just like setTimeout.
+    document.getElementById('myButton').addEventListener('click', () => {
+      console.log('CLICK: this callback came from the Task Queue, via WebAPI event listener');
+    });
+
+    setTimeout(() => {
+      console.log('3: setTimeout callback (Task Queue)');
+    }, 0);
+
+    Promise.resolve().then(() => {
+      console.log('2: Promise callback (Microtask Queue) - always before setTimeout');
+    });
+
+    console.log('1b: page script finishes running (still synchronous)');
+
+    // TRY THIS: click the button quickly, then watch where in the queue
+    // the click handler executes relative to other things on the page.
+  </script>
+</body>
+</html>
