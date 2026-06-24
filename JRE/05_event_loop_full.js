@@ -18,7 +18,7 @@ setTimeout(() => {
 }, 0);
 
 Promise.resolve().then(() => {
-  console.log('E: Promise 2 (Microtask Queue)');
+  console.log('E: Pnoderomise 2 (Microtask Queue)');
 });
 
 console.log('B: synchronous middle');
