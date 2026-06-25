@@ -1,0 +1,22 @@
+let cart=[];
+
+cart.push("Laptop");
+
+cart.push("Mouse");
+
+cart.push("Keyboard");
+
+console.log(cart);
+
+cart.pop();
+
+console.log(cart);
+
+//Add / remove item to / from begining of an Array
+
+let fruits = ['Apple', 'Banana']
+console.log(fruits)
+let first = fruits.shift() 
+console.log(fruits)
+let newLength = fruits.unshift('Berry') 
+console.log(fruits)

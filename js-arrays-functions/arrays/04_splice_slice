@@ -1,0 +1,41 @@
+/*
+splice() --> Original changes.
+
+slice() --> Original remains.
+*/
+
+//Remove an item (splice)
+let fruits = ["Strawberry", "Banana", "Mango"]
+console.log(fruits)
+let pos = fruits.indexOf('Banana')
+//console.log(fruits)
+let removedItem = fruits.splice(pos, 1)
+console.log(fruits)
+console.log(removedItem)
+
+//Insert and/or replace an item (splice)
+const months = ['Jan', 'March', 'April', 'June'];
+months.splice(1, 0, 'Feb'); // inserts at index 1
+console.log(months); // ["Jan", "Feb", "March", "April", "June"]
+months.splice(4, 1, 'May'); // replaces 1 element at index 4
+console.log(months); // ["Jan", "Feb", "March", "April", "May"]
+
+//Copy an array (slice)
+let fal = ["Strawberry", "Banana", "Mango"]
+let shallowCopy = fal.slice() // ["Strawberry", "Banana", "Mango"]
+console.log(fal)
+console.log(shallowCopy)
+
+//Copy sub-array elements (slice)
+const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+console.log(animals.slice(2)); // ["camel", "duck", "elephant"]
+console.log(animals.slice(2, 4)); // ["camel", "duck"]
+console.log(animals.slice(1, 5)); // ["bison", "camel", "duck", "elephant"]
+
+//Converting Array Elements to String (join)
+const elements = ['Fire', 'Air', 'Water'];
+console.log(elements.join()); // "Fire,Air,Water"
+console.log(elements.join('')); // "FireAirWater"
+console.log(elements.join('-')); // "Fire-Air-Water"
+
+
