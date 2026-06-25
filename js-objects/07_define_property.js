@@ -1,0 +1,1 @@
+// refer 06_property_descriptor.js
